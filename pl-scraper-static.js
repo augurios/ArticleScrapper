@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
   const url = 'https://www.officedepot.co.cr/officedepotCR/en/Accesorios-para-C%C3%B3mputo/REPOSAPIES-STANDARD-FELLOWES/p/17844';
 
 
-// Emailer 
+// Emailer
 
 
 var transporter = nodemailer.createTransport({
@@ -54,7 +54,7 @@ const sendMail = () => {
     function callEveryHour() {
       checkWebsite()
       setInterval(checkWebsite, 1000 * 60 * 60);
-      }
+    }
 
       var nextDate = new Date();
       if (nextDate.getMinutes() === 0) { // You can check for seconds here too
@@ -65,6 +65,6 @@ const sendMail = () => {
           nextDate.setSeconds(0);// I wouldn't do milliseconds too ;)
       
           var difference = nextDate - new Date();
-          setTimeout(callEveryHour, 10);
+          setTimeout(callEveryHour, difference);
       }
 
